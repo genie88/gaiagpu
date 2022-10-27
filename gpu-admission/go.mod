@@ -1,6 +1,6 @@
 module tkestack.io/gpu-admission
 
-go 1.13
+go 1.14
 
 require (
 	github.com/gophercloud/gophercloud v0.1.0 // indirect

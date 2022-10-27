@@ -5,10 +5,12 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-GITCOMMIT=$(git log --oneline|wc -l|sed -e 's/^[ \t]*//')
-VERSION=${VERSION:-unknown}  # MUST modify it for every branch!
+# GITCOMMIT=$(git log --oneline|wc -l|sed -e 's/^[ \t]*//')
+GITCOMMIT=1.0
+VERSION=${VERSION:-main}  # MUST modify it for every branch!
 ROOT=$(dirname "${BASH_SOURCE}")/..
-IMAGE=${IMAGE:-"gpu-admission-${VERSION}:${GITCOMMIT}"}
+IMAGE=${IMAGE:-"10.119.46.41:30003/library/gaiagpu-admission-${VERSION}:${GITCOMMIT}"}
+# IMAGE=${IMAGE:-"10.119.46.41:30003/library/gpu-admission:1.0"}
 GIT_VERSION_FILE="${ROOT}/.version-defs"
 
 readonly LOCAL_OUTPUT_ROOT="${ROOT}/${OUT_DIR:-_output}"

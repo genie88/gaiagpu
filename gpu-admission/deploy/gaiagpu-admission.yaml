@@ -3,19 +3,21 @@ kind: Pod
 metadata:
   annotations:
     scheduler.alpha.kubernetes.io/critical-pod: ""
-  name: gpu-admission
+  name: gaiagpu-admission
   namespace: kube-system
 spec:
   containers:
-    - image: gpu-admission-tke:36
+    - image: 10.119.46.41:30003/library/gaiagpu-admission-main:1.0
       imagePullPolicy: Always
-      name: gpu-admission
+      name: gaiagpu-admission
       env:
         - name: LOG_LEVEL
-          value: "4"
+          value: "5"
       ports:
-        - containerPort: 3456
+        - containerPort: 32767
   dnsPolicy: ClusterFirstWithHostNet
   hostNetwork: true
   priority: 2000000000
   priorityClassName: system-cluster-critical
+  nodeSelector:
+    node-role.kubernetes.io/master: ""

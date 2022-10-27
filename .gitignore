@@ -1,3 +1,11 @@
 go/
 .idea
 .chglog/
+*bin*
+*vendor/*
+*tar*
+*zip*
+*gz*
+*output*
+
+

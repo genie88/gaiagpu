@@ -5,7 +5,7 @@ ARG commit
 
 RUN yum install -y rpm-build make
 
-ENV GOLANG_VERSION 1.13.4
+ENV GOLANG_VERSION 1.14.1
 RUN curl -sSL https://dl.google.com/go/go${GOLANG_VERSION}.linux-amd64.tar.gz \
     | tar -C /usr/local -xz
 ENV GOPATH /go
@@ -35,6 +35,6 @@ COPY --from=build /root/rpmbuild/RPMS/x86_64/gpu-admission-${version}-${commit}.
 
 RUN rpm -ivh /tmp/gpu-admission-${version}-${commit}.el7.x86_64.rpm
 
-EXPOSE 3456
+EXPOSE 32767
 
-CMD ["/bin/bash", "-c", "/usr/bin/gpu-admission --address=0.0.0.0:3456 --v=$LOG_LEVEL --logtostderr=true $EXTRA_FLAGS"]
+CMD ["/bin/bash", "-c", "/usr/bin/gpu-admission --address=0.0.0.0:32767 --v=$LOG_LEVEL --logtostderr=true $EXTRA_FLAGS"]
