@@ -1,4 +1,4 @@
-module tkestack.io/gpu-manager
+module gpu-manager
 
 go 1.14
 

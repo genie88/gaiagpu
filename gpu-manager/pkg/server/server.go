@@ -30,21 +30,21 @@ import (
 	"syscall"
 	"time"
 
-	displayapi "tkestack.io/gpu-manager/pkg/api/runtime/display"
-	"tkestack.io/gpu-manager/pkg/config"
-	deviceFactory "tkestack.io/gpu-manager/pkg/device"
-	containerRuntime "tkestack.io/gpu-manager/pkg/runtime"
-	allocFactory "tkestack.io/gpu-manager/pkg/services/allocator"
-	"tkestack.io/gpu-manager/pkg/services/response"
+	displayapi "gpu-manager/pkg/api/runtime/display"
+	"gpu-manager/pkg/config"
+	deviceFactory "gpu-manager/pkg/device"
+	containerRuntime "gpu-manager/pkg/runtime"
+	allocFactory "gpu-manager/pkg/services/allocator"
+	"gpu-manager/pkg/services/response"
 
 	// Register allocator controller
-	_ "tkestack.io/gpu-manager/pkg/services/allocator/register"
-	"tkestack.io/gpu-manager/pkg/services/display"
-	"tkestack.io/gpu-manager/pkg/services/virtual-manager"
-	"tkestack.io/gpu-manager/pkg/services/volume"
-	"tkestack.io/gpu-manager/pkg/services/watchdog"
-	"tkestack.io/gpu-manager/pkg/types"
-	"tkestack.io/gpu-manager/pkg/utils"
+	_ "gpu-manager/pkg/services/allocator/register"
+	"gpu-manager/pkg/services/display"
+	vitrual_manager "gpu-manager/pkg/services/virtual-manager"
+	"gpu-manager/pkg/services/volume"
+	"gpu-manager/pkg/services/watchdog"
+	"gpu-manager/pkg/types"
+	"gpu-manager/pkg/utils"
 
 	systemd "github.com/coreos/go-systemd/daemon"
 	google_protobuf1 "github.com/golang/protobuf/ptypes/empty"
@@ -130,6 +130,7 @@ func (m *managerImpl) Run() error {
 	}
 
 	if !sent {
+		klog.Errorf("systemd.SdNotify() returned false, sent is %v, err is: %v\n", sent, err)
 		klog.Errorf("Unable to set Type=notify in systemd service file?")
 	}
 

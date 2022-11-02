@@ -24,11 +24,11 @@ import (
 	"strings"
 	"time"
 
-	"tkestack.io/gpu-manager/cmd/manager/options"
-	"tkestack.io/gpu-manager/pkg/config"
-	"tkestack.io/gpu-manager/pkg/server"
-	"tkestack.io/gpu-manager/pkg/types"
-	"tkestack.io/gpu-manager/pkg/utils"
+	"gpu-manager/cmd/manager/options"
+	"gpu-manager/pkg/config"
+	"gpu-manager/pkg/server"
+	"gpu-manager/pkg/types"
+	"gpu-manager/pkg/utils"
 
 	"github.com/fsnotify/fsnotify"
 	"k8s.io/klog"

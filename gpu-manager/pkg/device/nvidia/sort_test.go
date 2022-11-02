@@ -21,7 +21,7 @@ import (
 	"flag"
 	"testing"
 
-	"tkestack.io/gpu-manager/pkg/types"
+	"gpu-manager/pkg/types"
 )
 
 func init() {

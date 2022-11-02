@@ -32,8 +32,8 @@ import (
 
 	pluginapi "k8s.io/kubelet/pkg/apis/deviceplugin/v1beta1"
 
-	nvtree "tkestack.io/gpu-manager/pkg/device/nvidia"
-	"tkestack.io/gpu-manager/pkg/types"
+	nvtree "gpu-manager/pkg/device/nvidia"
+	"gpu-manager/pkg/types"
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/pkg/errors"

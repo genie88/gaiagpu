@@ -7,8 +7,8 @@ ARG commit
 RUN yum install -y rpm-build make
 
 # default git has problems while cloning some repository
-RUN yum install -y https://repo.ius.io/ius-release-el7.rpm \
-  && yum install -y git222
+RUN yum install -y https://repo.ius.io/ius-release-el7.rpm
+RUN yum install -y git
 
 ENV GOLANG_VERSION 1.14.3
 RUN curl -sSL https://dl.google.com/go/go${GOLANG_VERSION}.linux-amd64.tar.gz \
@@ -36,6 +36,7 @@ ARG version
 ARG commit
 
 COPY --from=build /root/rpmbuild/RPMS/x86_64/gpu-manager-${version}-${commit}.el7.x86_64.rpm /tmp
+RUN mkdir -p /root/.kube
 
 RUN yum install epel-release -y && \
   yum install -y which jq

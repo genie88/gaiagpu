@@ -20,7 +20,7 @@ package config
 import (
 	"time"
 
-	"tkestack.io/gpu-manager/pkg/types"
+	"gpu-manager/pkg/types"
 )
 
 // Config contains the necessary options for the plugin.

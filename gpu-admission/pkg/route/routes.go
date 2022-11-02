@@ -34,7 +34,7 @@ import (
 const (
 	// version router path
 	versionPath = "/version"
-	apiPrefix   = "/scheduler"
+	apiPrefix   = "/gaiagpu-scheduler"
 	// predication router path
 	predicatesPrefix = apiPrefix + "/predicates"
 )

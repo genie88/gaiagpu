@@ -24,11 +24,11 @@ import (
 
 	"k8s.io/klog"
 
-	"tkestack.io/gpu-manager/cmd/manager/app"
-	"tkestack.io/gpu-manager/cmd/manager/options"
-	"tkestack.io/gpu-manager/pkg/flags"
-	"tkestack.io/gpu-manager/pkg/logs"
-	"tkestack.io/gpu-manager/pkg/version"
+	"gpu-manager/cmd/manager/app"
+	"gpu-manager/cmd/manager/options"
+	"gpu-manager/pkg/flags"
+	"gpu-manager/pkg/logs"
+	"gpu-manager/pkg/version"
 
 	"github.com/spf13/pflag"
 )

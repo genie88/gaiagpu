@@ -37,4 +37,4 @@ RUN rpm -ivh /tmp/gpu-admission-${version}-${commit}.el7.x86_64.rpm
 
 EXPOSE 32767
 
-CMD ["/bin/bash", "-c", "/usr/bin/gpu-admission --address=0.0.0.0:32767 --v=$LOG_LEVEL --logtostderr=true $EXTRA_FLAGS"]
+CMD ["/bin/bash", "-c", "/usr/bin/gpu-admission --address=0.0.0.0:32767 --v=$LOG_LEVEL --kubeconfig /root/.kube/config --logtostderr=true $EXTRA_FLAGS"]

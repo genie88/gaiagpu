@@ -34,10 +34,10 @@ spec:
       priorityClassName: "system-node-critical"
       # only run node has gpu device
       nodeSelector:
-        nvidia-device-enable: enable
+        gpushare: "true"
       hostPID: true
       containers:
-        - image: tkestack/gpu-manager:1.0.3
+        - image: 10.119.46.41:30003/library/gaiagpu-manager:1.0
           imagePullPolicy: Always
           name: gpu-manager
           securityContext:
@@ -63,11 +63,18 @@ spec:
             - name: usr-directory
               mountPath: /usr/local/host
               readOnly: true
+            - name: cluster-config
+              mountPath: /root/.kube/
+              readOnly: false 
+            - name: run-socket
+              mountPath: /run/nvidia-persistenced   
           env:
+            - name: NOTIFY_SOCKET
+              value: "/run/systemd/notify"
             - name: LOG_LEVEL
-              value: "4"
+              value: "5"
             - name: EXTRA_FLAGS
-              value: "--logtostderr=false"
+              value: "--logtostderr=true --cgroup-driver=systemd"
             - name: NODE_NAME
               valueFrom:
                 fieldRef:
@@ -93,6 +100,17 @@ spec:
           hostPath:
             type: DirectoryOrCreate
             path: /etc/gpu-manager/checkpoint
+        - name: cluster-config
+          hostPath:
+            type: DirectoryOrCreate
+            path: /home/wychen/.kube
+        - name: run-socket
+          hostPath:
+            type: Directory
+            path:  /run/nvidia-persistenced      
+          # configMap: 
+            # name: cluster-config
+            # namespace: kube-system     
         # We have to mount the whole /var/run directory into container, because of bind mount docker.sock
         # inode change after host docker is restarted
         - name: run-dir

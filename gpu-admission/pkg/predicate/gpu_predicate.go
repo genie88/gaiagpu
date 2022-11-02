@@ -20,6 +20,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"strings"
 	"time"
 
@@ -156,6 +157,7 @@ func (gpuFilter *GPUFilter) deviceFilter(
 		nodeInfoList = append(nodeInfoList, nodeInfo)
 	}
 	sorter.Sort(nodeInfoList)
+	log.Printf("nodeInfoList: %+v", nodeInfoList)
 
 	for _, nodeInfo := range nodeInfoList {
 		node := nodeInfo.GetNode()

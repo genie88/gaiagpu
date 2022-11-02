@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"time"
 
-	"tkestack.io/gpu-manager/pkg/utils"
+	"gpu-manager/pkg/utils"
 
 	"k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

@@ -18,7 +18,7 @@
 package device
 
 import (
-	"tkestack.io/gpu-manager/pkg/config"
+	"gpu-manager/pkg/config"
 
 	"k8s.io/klog"
 )

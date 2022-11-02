@@ -20,7 +20,7 @@ package nvidia
 import (
 	"sort"
 
-	"tkestack.io/gpu-manager/pkg/types"
+	"gpu-manager/pkg/types"
 )
 
 //LessFunc represents funcion to compare two NvidiaNode

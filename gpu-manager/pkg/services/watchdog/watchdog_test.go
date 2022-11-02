@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"tkestack.io/gpu-manager/pkg/types"
+	"gpu-manager/pkg/types"
 
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"

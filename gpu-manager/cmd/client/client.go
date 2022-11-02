@@ -21,10 +21,11 @@ import (
 	"context"
 	goflag "flag"
 
-	vcudaapi "tkestack.io/gpu-manager/pkg/api/runtime/vcuda"
-	"tkestack.io/gpu-manager/pkg/flags"
-	"tkestack.io/gpu-manager/pkg/logs"
-	"tkestack.io/gpu-manager/pkg/utils"
+	vcudaapi "gpu-manager/pkg/api/runtime/vcuda"
+
+	"gpu-manager/pkg/flags"
+	"gpu-manager/pkg/logs"
+	"gpu-manager/pkg/utils"
 
 	"github.com/spf13/pflag"
 	"google.golang.org/grpc"

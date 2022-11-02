@@ -18,8 +18,8 @@
 package dummy
 
 import (
-	"tkestack.io/gpu-manager/pkg/config"
-	"tkestack.io/gpu-manager/pkg/device"
+	"gpu-manager/pkg/config"
+	"gpu-manager/pkg/device"
 )
 
 func init() {

@@ -6,8 +6,8 @@ import (
 	"k8s.io/klog"
 	pluginapi "k8s.io/kubelet/pkg/apis/deviceplugin/v1beta1"
 
-	"tkestack.io/gpu-manager/pkg/types"
-	"tkestack.io/gpu-manager/pkg/utils"
+	"gpu-manager/pkg/types"
+	"gpu-manager/pkg/utils"
 )
 
 type Manager interface {

@@ -2,7 +2,7 @@ go/
 .idea
 .chglog/
 *bin*
-*vendor/*
+*/vendor/*
 *tar*
 *zip*
 *gz*

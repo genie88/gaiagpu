@@ -21,7 +21,7 @@ import (
 	"flag"
 	"testing"
 
-	"tkestack.io/gpu-manager/pkg/device/nvidia"
+	"gpu-manager/pkg/device/nvidia"
 )
 
 func init() {

@@ -18,9 +18,9 @@
 package allocator
 
 import (
-	"tkestack.io/gpu-manager/pkg/config"
-	"tkestack.io/gpu-manager/pkg/device"
-	"tkestack.io/gpu-manager/pkg/services/response"
+	"gpu-manager/pkg/config"
+	"gpu-manager/pkg/device"
+	"gpu-manager/pkg/services/response"
 
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/klog"

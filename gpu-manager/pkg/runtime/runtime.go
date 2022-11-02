@@ -16,10 +16,10 @@ import (
 	"k8s.io/klog"
 	"k8s.io/kubectl/pkg/util/qos"
 
-	"tkestack.io/gpu-manager/pkg/services/watchdog"
-	"tkestack.io/gpu-manager/pkg/types"
-	"tkestack.io/gpu-manager/pkg/utils"
-	"tkestack.io/gpu-manager/pkg/utils/cgroup"
+	"gpu-manager/pkg/services/watchdog"
+	"gpu-manager/pkg/types"
+	"gpu-manager/pkg/utils"
+	"gpu-manager/pkg/utils/cgroup"
 )
 
 type ContainerRuntimeInterface interface {

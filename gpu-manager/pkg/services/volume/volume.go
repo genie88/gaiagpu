@@ -27,8 +27,8 @@ import (
 	"strconv"
 	"strings"
 
-	"tkestack.io/gpu-manager/pkg/services/volume/ldcache"
-	"tkestack.io/gpu-manager/pkg/types"
+	"gpu-manager/pkg/services/volume/ldcache"
+	"gpu-manager/pkg/types"
 
 	"k8s.io/klog"
 )

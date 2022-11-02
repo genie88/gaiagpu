@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-readonly PACKAGE="tkestack.io/gpu-manager"
+readonly PACKAGE="gpu-manager"
 readonly BUILD_IMAGE_REPO=plugin-build
 readonly LOCAL_OUTPUT_IMAGE_STAGING="${ROOT}/go/images"
-readonly IMAGE_FILE=${IMAGE_FILE:-"thomassong/gpu-manager"}
+readonly IMAGE_FILE=${IMAGE_FILE:-"10.119.46.41:30003/library/gaiagpu-manager"}
 readonly PROTO_IMAGE="proto-generater"
 
 function plugin::cleanup() {

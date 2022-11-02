@@ -22,7 +22,7 @@ import (
 
 	"k8s.io/klog"
 
-	"tkestack.io/gpu-manager/pkg/device/nvidia"
+	"gpu-manager/pkg/device/nvidia"
 )
 
 type linkMode struct {
